@@ -1,16 +1,15 @@
 [[source]]
-name = "pypi"
 url = "https://pypi.org/simple"
 verify_ssl = true
+name = "pypi"
+
+[packages]
+numpy = "*"
+scikit-learn = "*"
+flask = "*"
+waitress = "*"
 
 [dev-packages]
 
-[packages]
-numpy = "==1.19.5"
-scikit-learn = "==1.0"
-flask = "==0.12.2"
-waitress = "*"
-requests = "*"
-
 [requires]
-python_version = "3.6"
+python_version = "3.8"
