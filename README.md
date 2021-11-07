@@ -80,23 +80,10 @@
 <li>Exposing the Lambda function as a web service via API Gateway</li>
 </ul>
 <h2><a id="user-content-chapter-9-kubernetes-and-kubeflow" class="anchor" aria-hidden="true" href="#chapter-9-kubernetes-and-kubeflow"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path></svg></a>Chapter 9: Kubernetes and Kubeflow</h2>
-<p>Kubernetes:</p>
 <ul>
 <li>Understanding different methods of deploying and serving models in the cloud.</li>
 <li>Serving Keras and TensorFlow models with TensorFlow-Serving</li>
 <li>Deploying TensorFlow-Serving to Kubernetes</li>
-</ul>
-<p>Code: <a href="/sanghvirajit/mlbookcamp-code/blob/master/chapter-09-kubernetes">chapter-09-kubernetes</a></p>
-<p>Kubeflow:</p>
-<ul>
-<li>Using Kubeflow and KFServing for simplifying the deployment process</li>
-</ul>
-<p>Code: <a href="/sanghvirajit/mlbookcamp-code/blob/master/chapter-09-kubeflow">chapter-09-kubeflow</a></p>
-<p>Articles from <a href="https://mlbookcamp.com" rel="nofollow">mlbookcamp.com</a>:</p>
-<ul>
-<li><a href="https://mlbookcamp.com/article/eks" rel="nofollow">Creating an EKS Cluster</a></li>
-<li><a href="https://mlbookcamp.com/article/kfserving-eks-install" rel="nofollow">Creating a KFServing Cluster on EKS</a></li>
-<li><a href="https://mlbookcamp.com/article/kfserving-transformers" rel="nofollow">KFServing Transformers</a></li>
 </ul>
   </body>
 </html>
