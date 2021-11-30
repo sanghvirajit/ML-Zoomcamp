@@ -1,0 +1,26 @@
+docker build -t clothing-model
+docker run -it --rm -p 8080:8080 clothing-model:latest
+
+
+pip install awscli
+aws ecr create-repository --repository-name clothing-tflite-images
+
+"repositoryUri": "923572104135.dkr.ecr.eu-central-1.amazonaws.com/clothing-tflite-images"
+
+aws ecr get-login --no-include-email | sed 's/[0-9a-zA-Z=]|\{20,\}/PASSWORD/g'
+
+ACCOUNT=923572104135
+REGION=eu-central-1
+REGISTORY=clothing-tflite-images
+
+PREFIX=${ACCOUNT}.dkr.{REGION}.amazonaws.com/{REGISTORY}
+TAG=clothing-model-xception-v4-001
+REMOTE_URI=${PREFIX}:${TAG}
+echo ${REMOTE_URI}
+
+echo 923572104135.dkr.ecr.eu-central-1.amazonaws.com/clothing-tflite-images:clothing-model-xception-v4-001
+
+923572104135.dkr.ecr.eu-central-1.amazonaws.com/clothing-tflite-images:clothing-model-xception-v4-001
+
+docker tag clothing-model:latest 923572104135.dkr.ecr.eu-central-1.amazonaws.com/clothing-tflite-images:clothing-model-xception-v4-001
+
