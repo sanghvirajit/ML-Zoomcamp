@@ -13,6 +13,10 @@ The Dataset used in this project contains 2 folders: yes and no which contains 2
 
 Dataset can be downloaded from here, https://www.kaggle.com/navoneel/brain-mri-images-for-brain-tumor-detection
 
+![image](https://user-images.githubusercontent.com/69073063/145676221-78b5bb27-27ab-443b-9d4b-50a21bc91a49.png)
+
+![image](https://user-images.githubusercontent.com/69073063/145676235-85ad9bdf-59fd-41e0-9744-f6c694cfa95b.png)
+
 # Data Split:
 The data was split in the following way:
 
@@ -23,6 +27,12 @@ The data was split in the following way:
 20% of the data for testing.
 
 ![image](https://user-images.githubusercontent.com/69073063/145675174-2f9fdc0b-9a41-48a3-b871-4a8364240152.png)
+
+# Data Augmentation
+
+Since this is a small dataset, There wasn't enough examples to train the neural network. Also, data augmentation was useful in taclking the data imbalance issue in the data.
+
+![image](https://user-images.githubusercontent.com/69073063/145676256-030f9e84-3aed-446e-8c32-af0cdd66b2be.png)
 
 # Transfer learning
 
@@ -41,6 +51,8 @@ Architecture of VGG16 (A), VGG19 (B), and ResNet (C).
 # Model Summary 
 
 ![image](https://user-images.githubusercontent.com/69073063/145675616-c7645747-1d44-40bf-bfa3-cd117d6b71cf.png)
+
+![image](https://user-images.githubusercontent.com/69073063/145676297-cb455e9a-1ca2-4bf6-9063-3533c81f8aae.png)
 
 # Model Deployment 
 
