@@ -42,6 +42,8 @@ Architecture of VGG16 (A), VGG19 (B), and ResNet (C).
 
 ![image](https://user-images.githubusercontent.com/69073063/145675616-c7645747-1d44-40bf-bfa3-cd117d6b71cf.png)
 
+# Model Deployment 
+
 ## Commands to run the project locally
 
 ```scala
