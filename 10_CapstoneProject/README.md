@@ -30,7 +30,7 @@ The data was split in the following way:
 
 # Data Augmentation
 
-Since this is a small dataset, There wasn't enough examples to train the neural network. Also, data augmentation was useful in taclking the data imbalance issue in the data.
+Since this is a small dataset, There wasn't enough examples to train the neural network. Also, data augmentation was useful in tackling the data imbalance issue in the data.
 
 ![image](https://user-images.githubusercontent.com/69073063/145676256-030f9e84-3aed-446e-8c32-af0cdd66b2be.png)
 
