@@ -1,3 +1,0 @@
-serving_default
-input_8 - input
-dense_7 - output
