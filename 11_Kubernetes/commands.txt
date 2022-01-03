@@ -1,0 +1,81 @@
+saved_model_cli show --dir clothing-model --all
+
+docker run -it --rm -p 8500:8500 -v "(enter full path)/clothing-model:/models/clothing-model/1" -e MODEL_NAME="clothing-model" tensorflow/serving:2.7.0
+
+To interact with the tensorflow serving, we need gRPC client to be installed.
+
+
+!pip install grpcion==1.42.0 tensorflow-serving-api==2.7.0
+
+jupyter nbconvert --to script tf-serving-connect.ipynb
+
+
+
+Enviroment requirment
+
+pip3 install pipenv==2018.11.26
+pipenv install grpcio==1.42.0 flask keras-image-helper waitress
+(creates pipfile and piplock file)
+
+DOCKER-COMPOSE
+
+docker build -t zoomcamp-10-model:xception-v4-001 -f image-model.dockerfile .
+
+docker run -it --rm -p 8500:8500 zoomcamp-10-model:xception-v4-001
+
+docker build -t zoomcamp-10-gateway:001 -f image-gateway.dockerfile .
+
+docker run -it --rm -p 9696:9696 zoomcamp-10-gateway:001
+
+
+docker-compose up
+docker-compose up -d (detached form) (gets our terminal back)
+docker-compose down
+
+
+A collection of nodes that are managed by a single Kubernetes instance is referred to as a Kubernetes cluster.
+
+nodes: server/computer (EC2 instances)
+PODS: Docker containers that runs on nodes
+DEPLOYMENT: Group of pods having same image configuration
+SERVICEs: Entrypoint of our deployment 
+Ingress: Entrypoint of cluster
+
+gateway services (input) - gateway pods - model service - model pods (predictions) - model service - gateway pods - gateway service (output)
+
+
+kubectl apply -f deployment.yaml
+kubectl get deployment
+kubectl get pod
+kubectl describe pod ping-deployment-5894cd774d-xqmfk
+E:\ML-Zoomcamp\11_Kubernetes\ping\bin\kind.exe load docker-image ping:v001
+kubectl port-forward ping-deployment-5894cd774d-xqmfk 9696:9696
+curl localhost:9696/ping
+
+kubectl apply -f service.yaml
+kubectl port-forward service/ping 8080:80
+curl localhost:8080/ping
+
+Tf-serving-model on kubernetes
+
+E:\ML-Zoomcamp\11_Kubernetes\ping\bin\kind.exe load docker-image zoomcamp-10-model:xception-v4-001 (making image available on the kubernetes cluster using kind)
+kubectl apply -f model-deployment.yaml
+kubectl port-forward tf-serving-clothing-model-7ff545588b-qgzqd 8500:8500
+
+kubectl apply -f model-service.yaml
+kubectl port-forward service/tf-serving-clothing-model 8500:8500
+
+E:\ML-Zoomcamp\11_Kubernetes\ping\bin\kind.exe load docker-image zoomcamp-10-gateway:001
+
+
+kubectl get pod
+kubectl exec -it ping-deployment-5894cd774d-xqmfk -- bash
+
+kubectl delete -f deployment.yaml
+
+kubectl apply -f gateway-deployment.yaml
+
+kubectl logs gateway-84b957949d-slmng
+
+kubectl apply -f gateway-service.yaml
+kubectl port-forward service/gateway 8080:80
